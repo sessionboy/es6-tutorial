@@ -80,7 +80,7 @@ console.log(userkey);  // [ "name", "age", "gender" ]
 ##### 经典案例:
 ```js
 
-class App extends Components {
+class App extends Component {
     render(){
         const user = { name:"ben", age:23, gender:"男" };
         const options = { name:"用户名", age:"年龄", gender:"性别" };
