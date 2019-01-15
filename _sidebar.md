@@ -13,7 +13,7 @@
   - [includes](es6/includes)
   - [class类](es6/class)
   - [箭头函数](es6/arrow-function)
-  - [修饰器Decorator](es6/Decorator)
+  - [类修饰器Decorator](es6/Decorator)
   - [promise处理异步](es6/promise)
   - [generator处理异步](es6/generator)
   - [async/await异步终结者](es6/async-await)
