@@ -100,12 +100,12 @@ obj.fn();
 class Post {
 
   async getPost(id) {
-    const post = await fetch("/api/post",{ postId: id });
+    const post = await fetch("/api/post",{ postId: id }).then(res=>res.json());
     // ...
   }
 }
 const Posts = new Post();
-Posts.getPost('id').then(…);  
+Posts.getPost('id');  
 
 
 // 5，箭头函数
@@ -125,10 +125,9 @@ async函数内部return语句返回的值，会成为then方法回调函数的�
 async function getPost() {  
   try {
 
-    const userres = await fetch('./user.json'); // 先获取用户信息
-    console.log(user);  
+    return await fetch('./post.json'); // 返回await结果
 
-    // 其他工作
+    // 其他工作 
   }
   catch(err){
     // 异常捕获
@@ -139,8 +138,10 @@ async function getPost() {
 // 调用  
 getPost()
  .then(res=>{
-    console.log(res);
     return res.json();
+ })
+ .then(data=>{
+    console.log(data);
  })
  .catch(err=>{
     console.log(err);
