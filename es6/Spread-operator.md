@@ -34,11 +34,28 @@ class UserComponent extends Component {
 
 ### 在数组中使用
 
+##### 普通应用 
 ```js
  const base = [ 1, 2, 3 ];  
 
- const arr = [ 0, ...base ];
+ const arr = [ 0, ...base ];  // 数组合并，和concat有相同的功效
 
  console.log(arr); // [ 0, 1, 2, 3 ]
+```
+##### `set`和`...`实现数组去重    
+ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+```js
+const arr = [ 1,1,2,2,3,4,5,5,5 ]; 
+const noRepeatArr = [ ...new Set(arr) ];
+```
+
+### 在字符串中使用
+
+```js
+ const str = "hello";  
+
+ const arr = [ 0, ...str ];
+
+ console.log(arr); // [ 0, "h","e","l","l","o" ]
 
 ```

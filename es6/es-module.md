@@ -1,7 +1,12 @@
-# es-module 模块化
-模块功能主要由两个命令构成：export和import，即导出和导入。   
+# es-module 模块化   
 
-使用es6时，一个js文件就是一个模块，文件内的变量、函数、类需要export才能被外部引用。
+以前javascript是没有模块体系的，后来js社区提出了三种模块化方案，主要是`CommonJS`，`AMD`，`CMD`三大规范。比如nodejs的模块系统`require`、webpack等都是以`CommonJS`规范来实现的；requirejs是基于`AMD`规范来实现的，seajs是基于`CMD`规范实现的。
+
+但这些都不是最好的方式，于是es6提出了官方的`es-module`模块化方案，成为浏览器和服务器通用的模块解决方案。  
+
+es-module主要由两个命令构成：export和import，即导出和导入。   
+
+使用es-module时，可以说一个js文件就是一个模块，文件内的变量、函数、类需要export，然后才能在另一个模块中使用import来引用。
 ## 一，基本使用
 
 ##### 普通导入导出
@@ -22,13 +27,19 @@ import { count } from './test1';
 // 默认导出一个count变量
 const count = 100;
 export default count;  // 使用默认导出时，不能使用变量声明表达式
-
+  
+  
+// 导入时是默认的变量名`default`，你可以定义一个新的名字，或使用`default as`重命名  
 
 // test2.js 
-// 导入默认的count，
 import count from './test1';
 或
-import anyname from './test1'; // anyname可以是任意变量名
+import anyname from './test1'; // anyname可以是任意变量名  
+
+// 等同于  
+import { default as count }  from './test1';
+或
+import { default as anyname }  from './test1';
 ```
 > 使用默认导出，在其导入时其变量名可自定义
 

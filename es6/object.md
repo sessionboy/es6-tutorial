@@ -65,7 +65,7 @@ console.log(user);  // { name:"ben", age:23, gender:"男" }
 
 ### 二，Object.keys()  
 
-Object.keys()方法主要用于获取对象属性的键`key`转成一个数组。     
+对象属性是`key:value`结构，而Object.keys()方法主要用于把对象属性的键`key`转成一个数组。     
 
 ```js
 const user = { name:"ben", age:23, gender:"男" };
@@ -106,7 +106,7 @@ class App extends Component {
 
 ### 三，Object.values() 
 
-和Object.keys()不同，Object.values方法主要用于获取对象属性的`value`转成一个数组。     
+和Object.keys()不同，Object.values方法主要用于把对象属性的值`value`转成一个数组。     
 
 > Object.values是es7中新增的方法
 
@@ -156,7 +156,7 @@ console.log(Object.entries(obj));  // [ [key,value] ... ]
 
 ### 六，Object.is() 
 
-Object.is()用于判断对象两个值是否相等，与运算符`===`等效。
+Object.is()用于判断两个值是否相等，与运算符`===`等效。
 
 ```js
 Object.is('foo', 'foo')

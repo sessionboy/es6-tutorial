@@ -1,12 +1,14 @@
-# 解构赋值
+# 解构赋值    
+ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构赋值（Destructuring）。
 ### 一，对象的解构赋值
 
 #### 基本使用  
-
+对象属性的结构是`key:value`，解构赋值时，变量名需要和属性名`key`一致，否则会是`undefined`。
 ```js
-let user = { name: "ben", age: 20, gender:"男" };
+let user = { name: "ben", age: 20, gender:"男" };  
+
 // 解构赋值
-const { name, age } = user;
+const { name, age } = user;  // 变量名对应的是对象属性的key
 console.log(name); // ben
 console.log(age); // 20
 ```

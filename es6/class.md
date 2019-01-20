@@ -1,7 +1,19 @@
 # class 类
 > es6中的class(类)是es5原型写法的一个语法糖，拥有很好的开发体验
 
-### 一，基本使用
+### 一，基本使用  
+
+```js
+// 定义一个空的类
+class Point {
+}
+
+// 如果class内没有定义constructor，则默认class的constructor为空函数。
+class Point {
+  constructor() {}
+}
+```
+生成类实例，传递参数
 ```js
 // es6写法
 class Point {
@@ -34,17 +46,6 @@ var p = new Point(1, 2);
 ```
 > constructor是class的构造函数，当使用new生成实例时，constructor方法会自动调用  
 
-如果constructor没有定义，则默认类的constructor为空函数。
-```js
-class Point {
-}
-
-// 等同于
-class Point {
-  constructor() {}
-}
-```
-
 ### 二，定义class类属性    
 
 ##### 1，在constructor内定义
@@ -55,7 +56,7 @@ class Point {
         this.state={
             name: null
         }
-        this.getname = this.getname.bind();
+        this.getname = this.getname.bind(this);
     }
     getname(){
         // do
@@ -103,7 +104,7 @@ class App extends Component {
 ```
 
 ### 三，使用`static`定义静态方法和静态属性      
-使用static定义类的静态方法，访问时不需要实例化。同时静态方法也不会被继承。
+使用static定义类的静态方法，不需要实例化就能访问。
 ```js
 class Point {      
 
@@ -131,6 +132,10 @@ const gender = Point.gender; // => man
 ```js
 class Point {  
     getname(){
+        return 1;
+    }
+    // 或使用箭头函数
+    getname = () =>{
         return 1;
     }
 }  
